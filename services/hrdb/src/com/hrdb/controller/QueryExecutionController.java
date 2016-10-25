@@ -39,6 +39,16 @@ public class QueryExecutionController {
     @Autowired
     private HrdbQueryExecutorService queryService;
 
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/test", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeTest(Pageable pageable) {
+        LOGGER.debug("Executing named query test");
+        Page<Object> result = queryService.executeTest(pageable);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
     @ApiOperation(value = "Process request to execute customer queries")
     @RequestMapping(value = "/queries/wm_custom", method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)

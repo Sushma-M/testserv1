@@ -4,6 +4,13 @@
     <wm-content name="content">
         <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
         <wm-page-content columnwidth="8" name="mainContent" padding="unset 15px">
+            <wm-grid title="" dataset="bind:Variables.HrdbExecuteTest.dataSet" navigation="Basic" name="grid2">
+                <wm-grid-column binding="USER_ID" caption="User Id" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="ROLE" caption="Role" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="USERNAME" caption="Username" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="PASSWORD" caption="Password" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="TENANT_ID" caption="Tenant Id" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+            </wm-grid>
             <wm-livegrid formlayout="dialog" name="livegrid1">
                 <wm-grid gridfirstrowselect="true" editmode="dialog" title="User List" dataset="bind:Variables.HrdbUserData.dataSet" navigation="Basic" name="grid1">
                     <wm-grid-column binding="userId" caption="User Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-grid-column>
